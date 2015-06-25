@@ -4,9 +4,7 @@ web:
   expose:
     - "8000"
   links:
-    - postgres:postgres 
-  volumes:
-    - /usr/src/app/static
+    - postgres:postgres
   env_file: .env
   command: /usr/local/bin/gunicorn mycms.wsgi:application -w 2 -b :8000
 
